@@ -505,6 +505,10 @@ export function LineGraph_({
                     },
                 },
                 y: {
+                    beforeFit: (scale) => {
+                        // display only as many bars, as we can fit labels
+                        scale.max = scale.ticks.length
+                    },
                     beginAtZero: true,
                     ticks: {
                         precision,
